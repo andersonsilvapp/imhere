@@ -13,6 +13,10 @@ export default function Home() {
     if(participants.includes(name)) {
       return Alert.alert('Participante Existe', 'Já existe um participante na lista com esse nome!')
     }
+    
+    if(name.trim() === '') {
+      return Alert.alert('Campo vazio', 'Digite o nome do participante!!!')
+    }
 
     setParticipants(prevState => ([...prevState, name]))
     setName('')
